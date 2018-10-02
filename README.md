@@ -1,1 +1,1 @@
-this repo contains relavant files for building our docker from scratch
+This repo contains relavant files for building our docker from scratch

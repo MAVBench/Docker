@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+    ros-service-kinetic: #name of the service
+        build: .  #relative to the docker-compose
+        environment:
+            - HOST_HOME=$HOME
+#        volumes:
+#            - type: bind
+#              source: /usr/local/cuda
+#              target: /usr/local/cuda
+
