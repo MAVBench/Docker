@@ -1,8 +1,17 @@
 This repo contains relavant files for building our docker from scratch on jetson-tx2
 
-**Building the Docker**
+**Installing Docker on TX2**
+https://github.com/Technica-Corporation/Tegra-Docker
+
+**Installing docker-compose**
+sudo pip install docker-compose
+
+**Incase you encountered docker persmission issue**
+sudo usermod -a -G docker $USER
+
+**Building our Docker Image**
     docker-compose build ros-service-kinetic; 
-**Running the Docker**
+**Running our Docker Image**
   1. xhost + //making sure your xservr is accepting connections from other hosts
   2. ./tx2-docker run ${name of the folder that you are in now}_ros-service-kinetic (note that tx2-docker is executable provided by https://github.com/Technica-Corporation/Tegra-Docker)
   3. cpy paste the commands echod by the above tx2-docker and you should see shell promp: 
