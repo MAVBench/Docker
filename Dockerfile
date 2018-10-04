@@ -5,7 +5,7 @@ FROM arm64v8/ros:kinetic-perception-xenial
 RUN mkdir /usr/local/cuda
 COPY cuda /usr/local/cuda
 COPY libcuda.so /usr/lib/aarch64-linux-gnu/
-COPY relocate_pcl.sh ~/ 
+COPY relocate_pcl.sh /root 
 
 #--- update/upgrade and install relevant packages
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -67,7 +67,6 @@ RUN cd ~/pcl && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCM
 RUN cd ~/pcl/build && make -j 1
 RUN cd ~/pcl/build && make -j 1 install
 
-COPY relocate_pcl.sh /root/  
 RUN cd ~/ && chmod +x relocate_pcl.sh && ./relocate_pcl.sh
 #
 ##--- airsim
@@ -99,7 +98,6 @@ RUN cd ~/darknet && wget https://pjreddie.com/media/files/yolov2.weights
 RUN mkdir -p ~/catkin_ws/src
 RUN cd ~/catkin_ws/
 RUN source /opt/ros/kinetic/setup.bash && cd ~/catkin_ws &&  \  
-    catkin_make && cd src/ && \
     git clone --recursive  https://github.com/hngenc/mav-bench.git  &&  \
     cd mav-bench && \
     git checkout -b refactor origin/refactor &&\
