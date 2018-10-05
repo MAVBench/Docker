@@ -1,4 +1,4 @@
-This repo contains relavant files for building our docker from scratch on jetson-tx2
+This repo contains relavant files for building our docker from scratch on jetson-tx2 (Note: We plan to release the docker by Micro conference 2018(Oct 20th) please stay tuned)
 
 **Installing Docker on TX2**
 https://github.com/Technica-Corporation/Tegra-Docker
