@@ -1,5 +1,7 @@
-This repo contains relavant files for building our docker from scratch on jetson-tx2 (Note: We plan to release the docker by Micro conference 2018(Oct 20th). Please stay tuned)
 
+This repo contains relavant files for either pulling the existing docker image (almost 99.99% likely what you need) or building our docker from scratch on jetson-tx2 
+
+## Cloning the Repo and Installing Prereqs
 **Installing Docker on TX2**
 https://github.com/Technica-Corporation/Tegra-Docker
 
@@ -9,11 +11,15 @@ sudo pip install docker-compose
 **Incase you encountered docker persmission issue**
 sudo usermod -a -G docker $USER
 
-
 **cloning the repo**
 git clone git@github.com:MAVBench/Docker.git mavbench_docker_repo
 
 
+## Pulling the Existing Docker Image
+- cd mavbench_docker_repo
+- docker pull zaddan/mavbench
+
+## Building From Scatch (most likely, you must skip this step. Mainly for Internal use)
 **copying over cuda libraries**
 some of our packages require access to cuda, hence we need to 
 include them in the docker context
@@ -22,12 +28,14 @@ include them in the docker context
 - cp -r ${cuda_folder} cuda
 - cp -r libcuda.so .
  
-
 **Building our Docker Image**
     docker-compose build ros-service-kinetic; 
-**Running our Docker Image**
-  1. xhost + //making sure your xservr is accepting connections from other hosts
-  2. ./tx2-docker run ${name of the folder that you are in now}_ros-service-kinetic (note that tx2-docker is executable provided by https://github.com/Technica-Corporation/Tegra-Docker)
+
+
+## How to Run
+  1. cd mavbech_docker_repo
+  2. xhost + //making sure your xservr is accepting connections from other hosts
+  2. ./tx2-docker run ${docker image name) (e.g. MAVBench) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
   3. cpy paste the commands echod by the above tx2-docker and you should see shell promp: 
   root@tegra-ubuntu. once in the container, you can launch our applications.
 
