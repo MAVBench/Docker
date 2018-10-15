@@ -17,7 +17,7 @@ git clone git@github.com:MAVBench/Docker.git mavbench_docker_repo
 
 ## Pulling the Existing Docker Image
 - cd mavbench_docker_repo
-- docker pull zaddan/mavbench
+- docker pull zaddan/mavbench:$tag (find the tags here https://hub.docker.com/r/zaddan/mavbench/tags/)
 
 ## Building From Scatch (most likely, you must skip this step. Mainly for Internal use)
 **copying over cuda libraries**
@@ -35,7 +35,7 @@ include them in the docker context
 ## How to Run
   1. cd mavbech_docker_repo
   2. xhost + //making sure your xservr is accepting connections from other hosts
-  2. ./tx2-docker run ${docker image name) (e.g. MAVBench) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
+  2. ./tx2-docker run ${docker image name) (e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
   3. cpy paste the commands echod by the above tx2-docker and you should see shell promp: 
   root@tegra-ubuntu. once in the container, you can launch our applications.
 
