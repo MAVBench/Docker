@@ -1,5 +1,5 @@
 
-This repo contains relavant files for either pulling the existing docker image (almost 99.99% likely what you need) or building our docker from scratch on jetson-tx2 
+This repo contains relavant files for either pulling the existing docker image (almost 99.99% likely what you need) or building our docker from scratch on jetson-tx2. Note that docker should be used as step toward familiarzing yourself with MAVBench. If you are serious about using MAVBench to do research, please use the stand alone build (https://github.com/MAVBench/tx2) since utility for profiling is always available there. 
 
 ## Cloning the Repo and Installing Prereqs
 **Installing Docker on TX2**
@@ -46,7 +46,7 @@ source ~/tx2/build-scripts/companion_setup_env_var.sh
 source ~/tx2/catkin_ws/devel/setup.bash 
 
 **Running the Benchmarks**
-roslaunch $pkg_name $launch_file 
+roslaunch $pkg_name $launch_file (add some explanation for pre_mission stuff)
 for example:
     roslaunch package_delivery package_delivery.launch 
     roslaunch package_delivery scanning.launch 
