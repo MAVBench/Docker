@@ -1,13 +1,13 @@
 #!/bin/bash
 # Copyright (c) 2017, Technica Corporation. All rights reserved.
 
-NV_LIBS="/usr/local/cuda \
-        /usr/lib/aarch64-linux-gnu/tegra"
+NV_LIBS="/usr/lib/aarch64-linux-gnu \
+	 /usr/local/cuda/lib64"
+
 LD_PATH="/usr/lib/aarch64-linux-gnu \
          /usr/lib/aarch64-linux-gnu/tegra \
-         /usr/local/cuda/lib64"
-
-
+         /usr/local/cuda/lib64 \
+         /root/catkin_ws/devel/lib"
 GPU_DEVICES="/dev/nvhost-ctrl \
              /dev/nvhost-ctrl-gpu \
              /dev/nvhost-prof-gpu \
@@ -37,7 +37,6 @@ build_docker_args() {
 build_env() {
         #build the LD_LIBRARY_PATH
         LD_LIBRARY_PATH=""
-        
         for lib in $LD_PATH; do
                 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$lib"
         done
@@ -48,7 +47,7 @@ if [[ $# -ge 2 && $1 == "run" ]]; then
         build_docker_args
 	build_env
 
-	DOCKER_OPTS="-e LD_LIBRARY_PATH=$LD_LIBRARY_PATH $NV_DOCKER_ARGS ${@:2} "
+	DOCKER_OPTS="-e LD_LIBRARY_PATH=$LD_LIBRARY_PATH $NV_DOCKER_ARGS ${@:2}"
         echo "docker run -it $DOCKER_OPTS"
         docker run $DOCKER_OPTS
 else
