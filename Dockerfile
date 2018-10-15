@@ -157,7 +157,6 @@ RUN source ~/tx2/build-scripts/companion_setup_env_var.sh &&\
     catkin_make -DCATKIN_WHITELIST_PACKAGES="kdtree" -j3 &&\
     catkin_make -DCATKIN_WHITELIST_PACKAGES="nbvplanner" -j3 &&\
     catkin_make -DCATKIN_WHITELIST_PACKAGES="mapping_and_sar" -j3 && \
-
     catkin_make -DCATKIN_WHITELIST_PACKAGES="follow_the_leader" -j3
 
 
