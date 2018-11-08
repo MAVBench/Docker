@@ -32,14 +32,14 @@ sudo usermod -a -G docker $USER;
 git clone git@github.com:MAVBench/Docker.git mavbench_docker_repo;
 ```
 
-4. Pull the Existing Docker Image
+5. Pull the Existing Docker Image
 ```bash
 cd mavbench_docker_repo;
 docker pull zaddan/mavbench:$tag #(find the tags here https://hub.docker.com/r/zaddan/mavbench/tags/)
 ```
-## Building From Scatch (most likely, you must skip this step. Mainly for Internal use)
-**copying over cuda libraries**
-1. Some of our packages require access to cuda, hence we need to 
+## Building From Scatch 
+Note: Mainly for Internal developers. 
+1. copy over cuda libraries. Some of our packages require access to cuda, hence we need to 
 include them in the docker context
 ```bash
 cd mavbench_docker_repo;
@@ -47,7 +47,7 @@ which nvcc ;#(to find where cuda is installed usually /usr/local/cuda. Note that
 cp -r ${cuda_folder} cuda;
 cp -r libcuda.so .;
 ``` 
-2. Building our Docker Image**
+2. Building our Docker Image.
 ```bash
  docker-compose build ros-service-kinetic; 
 ```
@@ -57,23 +57,23 @@ cp -r libcuda.so .;
 ```bash
   cd mavbech_docker_repo;
   xhost + ;#making sure your xservr is accepting connections from other hosts
-  ./tx2-docker run ${docker image name) #(e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
+  ./tx2-docker run ${docker image name); #(e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
   ```
-  3. cpy paste the commands echod by the above tx2-docker and you should see shell promp: 
+  2. cpy paste the commands echod by the above tx2-docker and you should see shell promp: 
   root@tegra-ubuntu. once in the container, you can launch our applications.
 
- 4. Sourcing the Catkin Workspace and relevant environment variables**
+ 3. Sourcing the Catkin Workspace and relevant environment variables
 ```bash
-source ~/tx2/build_scripts/companion_setup_env_var.sh
-source ~/tx2/catkin_ws/devel/setup.bash 
+source ~/tx2/build_scripts/companion_setup_env_var.sh;
+source ~/tx2/catkin_ws/devel/setup.bash; 
 ```
-5. Running the Benchmarks
+4. Running the Benchmarks
 ```bash
-roslaunch $pkg_name $launch_file #example: roslaunch package_delivery package_delivery.launch
+roslaunch $pkg_name $launch_file #example: roslaunch package_delivery package_delivery.launch;
 ```
-Example of all our packages and applications:
-    roslaunch package_delivery package_delivery.launch 
-    roslaunch package_delivery scanning.launch 
-    roslaunch mapping_and_sar mapping.launch 
-    roslaunch mapping_and_sar sar.launch 
-    roslaunch follow_the_leader follow_the_leader.launch 
+Example of all our packages and applications:   
+    roslaunch package_delivery package_delivery.launch      
+    roslaunch package_delivery scanning.launch    
+    roslaunch mapping_and_sar mapping.launch    
+    roslaunch mapping_and_sar sar.launch    
+    roslaunch follow_the_leader follow_the_leader.launch     
