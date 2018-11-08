@@ -27,7 +27,7 @@ sudo pip install docker-compose;
 sudo usermod -a -G docker $USER;
 ```
 
-4. clone our repo
+4. Clone our repo
 ```bash
 git clone git@github.com:MAVBench/Docker.git mavbench_docker_repo;
 ```
@@ -39,7 +39,7 @@ docker pull zaddan/mavbench:$tag #(find the tags here https://hub.docker.com/r/z
 ```
 ## Building From Scatch 
 Note: Mainly for Internal developers. 
-1. copy over cuda libraries. Some of our packages require access to cuda, hence we need to 
+1. Copy over cuda libraries. Some of our packages require access to cuda, hence we need to 
 include them in the docker context
 ```bash
 cd mavbench_docker_repo;
@@ -57,9 +57,9 @@ cp -r libcuda.so .;
 ```bash
   cd mavbech_docker_repo;
   xhost + ;#making sure your xservr is accepting connections from other hosts
-  ./tx2-docker run ${docker image name); #(e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
+  ./tx2-docker run ${docker image name) ; #(e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
   ```
-  2. cpy paste the commands echod by the above tx2-docker and you should see shell promp: 
+  2. Copy paste the commands echod by the above tx2-docker and you should see shell promp: 
   root@tegra-ubuntu. once in the container, you can launch our applications.
 
  3. Sourcing the Catkin Workspace and relevant environment variables
