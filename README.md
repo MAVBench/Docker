@@ -57,7 +57,7 @@ cp -r libcuda.so .;
 ```bash
   cd mavbech_docker_repo;
   xhost + ;#making sure your xservr is accepting connections from other hosts
-  ./tx2-docker run ${docker image name) ; #(e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
+  ./tx2-docker run ${docker image name); #(e.g. zaddan/mavbench/$tag) (note that tx2-docker is highly inspired by https://github.com/Technica-Corporation/Tegra-Docker)
   ```
   2. Copy paste the commands echod by the above tx2-docker and you should see shell promp: 
   root@tegra-ubuntu. once in the container, you can launch our applications.
@@ -72,7 +72,7 @@ source ~/tx2/catkin_ws/devel/setup.bash;
 roslaunch $pkg_name $launch_file #example: roslaunch package_delivery package_delivery.launch;
 ```
 Example of all our packages and applications:   
-    roslaunch package_delivery package_delivery.launch      
+    roslaunch package_delivery package_delivery.launch         
     roslaunch package_delivery scanning.launch    
     roslaunch mapping_and_sar mapping.launch    
     roslaunch mapping_and_sar sar.launch    
