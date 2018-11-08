@@ -15,18 +15,18 @@ This computer is responsible for running the compute intensive workloads.
 + JetPack (Nvidia SDK): 3.2 (We have only tested our setup with 3.2 but we suspect, it'll work with higher versions as well)
 
 **For lazy but happy**
-1. Install Docker on TX2 by following the instructions bellow:  
+1. Install Docker on TX2 by following the instructions bellow.  
 https://github.com/Technica-Corporation/Tegra-Docker
 
-2. Install docker-compose
+2. Install docker-compose.
 ```bash
 sudo pip install docker-compose;
 ```
-3. In case you encoutner docker permission issue:
+3. In case you encoutner docker permission issue.
 ```bash
 sudo usermod -a -G docker $USER;
 ```
-**cloning the repo**
+
 4. clone our repo
 ```bash
 git clone git@github.com:MAVBench/Docker.git mavbench_docker_repo;
