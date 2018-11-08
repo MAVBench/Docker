@@ -39,7 +39,7 @@ git clone git@github.com:MAVBench/Docker.git mavbench_docker_repo;
 cd mavbench_docker_repo;
 docker pull zaddan/mavbench:$tag #(find the tags here https://hub.docker.com/r/zaddan/mavbench/tags/)
 ```
-## Building From Scatch 
+**Building From Scatch** 
 Note: Mainly for Internal developers. 
 1. Copy over cuda libraries. Some of our packages require access to cuda, hence we need to 
 include them in the docker context
@@ -57,6 +57,6 @@ cp -r libcuda.so .;
 # Host Computer 
 This computer is responsible for running the drone/environment simulators + autopilot subsystem).
 
-Please take a look at the host computer build pprovided in the here.
+Please take a look at the host computer build pprovided in the [here](https://github.com/MAVBench/MAVBench/blob/master/docs/read_me/building.md).
 
 
