@@ -71,7 +71,8 @@ source ~/tx2/catkin_ws/devel/setup.bash;
 ```bash
 roslaunch $pkg_name $launch_file #example: roslaunch package_delivery package_delivery.launch;
 ```
-Example of all our packages and applications:   
+
+**Example of all our packages and applications**   
     roslaunch package_delivery package_delivery.launch         
     roslaunch package_delivery scanning.launch    
     roslaunch mapping_and_sar mapping.launch    
