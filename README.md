@@ -1,6 +1,5 @@
 
-This repo contains relavant files for either pulling the existing docker image (almost 99.99% likely what you need) or building our docker from scratch on jetson-tx2. Note that docker should be used as step toward familiarzing yourself with MAVBench. If you are serious about using MAVBench to do research, please use the stand alone build [MAVBench](https://github.com/MAVBench/tx2) since utility for profiling is always available there. 
-TODO: update the mavbench-apps submodule to use the latest updates
+This repo contains relavant files for either pulling the existing docker image (almost 99.99% likely what you need) or building our docker from scratch on jetson-tx2. Note that docker should be used as step toward familiarzing yourself with MAVBench. If you are serious about using MAVBench to do research, please use the stand alone build [MAVBench](https://github.com/MAVBench/tx2) to get access to various utilities such as profiling tools. 
 
 ## Cloning the Repo and Installing Prereqs
 **Installing Docker on TX2**
