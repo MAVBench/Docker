@@ -1,4 +1,4 @@
-This document describes the steps necessary for running the MAVBench toolset. 
+This document describes the steps necessary for running the MAVBench docker toolset. 
 # Companion Computer  
 
 ## Running It
@@ -29,5 +29,5 @@ roslaunch $pkg_name $launch_file #example: roslaunch package_delivery package_de
     roslaunch follow_the_leader follow_the_leader.launch     
 
 # Host Computer
-Please refer to the host computer instruction provided here.
+Please refer to the host computer instruction provided [here](https://github.com/MAVBench/MAVBench/blob/master/docs/read_me/running.md).
 
