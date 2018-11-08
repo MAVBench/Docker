@@ -55,7 +55,7 @@ cp -r libcuda.so .;
 ```
 
 # Host Computer 
-This computer is responsible for running the drone/environment simulators + autopilot subsystem).
+This computer is responsible for running the drone/environment simulators + autopilot subsystem.
 
 Please take a look at the host computer build pprovided in the [here](https://github.com/MAVBench/MAVBench/blob/master/docs/read_me/building.md).
 
